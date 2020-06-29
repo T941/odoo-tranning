@@ -16,5 +16,5 @@ class SaleOrderTag(models.Model):
 
     def action_view_delivery(self):
         action = self.env.ref('sale.action_orders').read()[0]
-        action['domain'] = [('tag_ids', '=', self.name)]
+        action['domain'] = [('tag_ids', 'in', self.ids)]
         return action

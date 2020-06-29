@@ -39,5 +39,20 @@
 
             </field>
         </record>
+
+        <record id="sale_order_view_search_inherit_sale_order" model="ir.ui.view">
+            <field name="name">sale.order.view.search.inherit.sale.order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//filter[@name='order_date']" position="after">
+                   <filter name="tag_ids" string="tag 1" domain="[('tag_ids','=','tag 1')]"/>
+                   <filter name="tag_ids" string="tag 2" domain="[('tag_ids','=','tag 2')]"/>
+                   <filter name="tag_ids" string="tag 3" domain="[('tag_ids','=','tag 3')]"/>
+                </xpath>
+
+            </field>
+        </record>
     </data>
 </odoo>
