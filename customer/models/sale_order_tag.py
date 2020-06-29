@@ -4,6 +4,7 @@ from odoo import models, fields
 class SaleOrderTag(models.Model):
     _name = 'sale.order.tag'
     _rec_name = 'name'
+
     name = fields.Char("Tag")
 
     delivery_count = fields.Integer(string='Delivery Orders', compute='count_tag_ids')

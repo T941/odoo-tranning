@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ad_view_partner_form_inherits" model="ir.ui.view">
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="cmt"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sale_form_inherit" model="ir.ui.view">
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name ='customer_signature']" position="after">
+                    <page string="Tags" name="tag">
+                        <group>
+                            <group>
+                                <field name="tag_ids" widget="many2many_checkboxes"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_sales_order_filter_inherit" model="ir.ui.view">
+            <field name="name">view.sales.order.filter.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//search//field[@name='user_id']" position="after">
+                   <field name="tag_ids" string="Tags"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

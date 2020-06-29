@@ -7,9 +7,9 @@
     ],
     'data': [
         'security/ir.model.access.csv',
-        'views/customer_view.xml',
-        'views/menu_sale_order.xml',
-        'views/sale_order_tag_views.xml'
+        'views/inherit_view.xml',
+        'views/sale_order_tag_view.xml',
+
     ],
     'installable': True,
     'application': True,
