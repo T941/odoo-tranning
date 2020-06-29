@@ -8,8 +8,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/inherit_view.xml',
+        'wizard/wizard.xml',
         'views/sale_order_tag_view.xml',
-
     ],
     'installable': True,
     'application': True,

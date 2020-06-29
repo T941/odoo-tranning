@@ -18,3 +18,5 @@ class SaleOrderTag(models.Model):
         action = self.env.ref('sale.action_orders').read()[0]
         action['domain'] = [('tag_ids', 'in', self.ids)]
         return action
+
+
